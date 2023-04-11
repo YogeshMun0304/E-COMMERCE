@@ -10,6 +10,7 @@ import ProductRoute from './routes/ProductRoutes.js'
 dotenv.config();
 connectDB();
 const app = express()
+
 app.use(cors())
 app.use(express.json())
 app.use("/api/v1/auth",authRoute)
