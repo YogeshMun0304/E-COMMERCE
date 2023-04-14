@@ -15,11 +15,17 @@ import CreateProduct from './pages/Admin/CreateProduct';
 import Users from './pages/Admin/Users';
 import Profile from './pages/user/Profile';
 import Order from './pages/user/Orders';
+import UpdateProduct from './pages/Admin/UpdateProduct';
+import Products from './pages/Admin/Products';
+import Search from './pages/Search';
+import ProductDetails from './pages/ProductDetails';
 function App() {
   return (
     <>
     <Routes>
       <Route path='/' element={<HomePage/>}></Route>
+      <Route path="/search" element={<Search />} />
+      <Route path="/product/:slug" element={<ProductDetails />} />
       <Route path='/about' element={<About/>}></Route>
       <Route path="/dashboard" element={<PrivateRoute />}>
           <Route path="user" element={<Dashboard />} />
@@ -30,6 +36,8 @@ function App() {
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="admin/users" element={<Users />} />
         <Route path="admin/create-category" element={<CreateCategory />} />
+        <Route path="admin/product/:slug" element={<UpdateProduct />} />
+          <Route path="admin/products" element={<Products />} />
         <Route path="admin/create-product" element={<CreateProduct />} />
       </Route>  
       <Route path='/register' element={<Register/>}></Route>
