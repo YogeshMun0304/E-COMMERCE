@@ -17,13 +17,7 @@ app.use("/api/v1/auth",authRoute)
 app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product",ProductRoute)
 app.use(morgan('dev'))
-app.get('/',(req,res)=>{
-    res.send({
-        message:"welcome "
 
-    })
-
-})
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT,()=>{
